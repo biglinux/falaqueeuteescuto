@@ -1,8 +1,8 @@
 # Maintainer: Barnabé di Kartola <barnabedikartola@gmail.com>
 
-pkgname=biglinux-package-template
-pkgdesc="Package template for biglinux"
-# depends=('')
+pkgname=falaqueeuteescuto
+pkgdesc="Visual accessibility package for biglinux"
+depends=('orca' 'espeak-ng' 'espeakup')
 # makedepends=('')
 # conflicts=('')
 pkgver=$(date +%y.%m.%d)

@@ -4,9 +4,12 @@
 #}
 
 ## arg 1:  the new package version
-#post_install() {
-    # do something here
-#}
+post_install() {
+  systemctl enable --now espeakup.service
+  if [ -e "/usr/bin/startbiglive" ]; then
+    sed -i "/systemctl restart/i orca &" "/usr/bin/startbiglive"
+  fi
+}
 
 ## arg 2:  the old package version
 #pre_upgrade() {
@@ -14,9 +17,9 @@
 #}
 
 ## arg 2:  the old package version
-#post_upgrade() {
-	#post_install
-#}
+post_upgrade() {
+  post_install
+}
 
 ## arg 1:  the old package version
 #pre_remove() {
